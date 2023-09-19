@@ -523,11 +523,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737251886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5c80bd96619d874ea59ac02bb430298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!114 &1737251893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,6 +554,7 @@ GameObject:
   - component: {fileID: 2097977757}
   - component: {fileID: 2097977756}
   - component: {fileID: 2097977755}
+  - component: {fileID: 2097977759}
   m_Layer: 0
   m_Name: StandArea
   m_TagString: Untagged
@@ -638,6 +640,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2097977759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097977754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2272473f9e4691a40963157d5c9d970b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: f
 --- !u!33 &1378436382627030
 MeshFilter:
   m_ObjectHideFlags: 0

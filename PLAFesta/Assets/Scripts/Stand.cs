@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class Stand : MonoBehaviour
 {
+    [SerializeField]
+    private string name = null;
+    private bool enabled = false;
+    private Texture2D image = null;
     public void ShowInfo()
     {
-        Debug.Log("Stand");
+        if (!enabled)
+        {
+            Debug.Log("Stand: " + name);
+            enabled = true;
+        }
+        else if (enabled)
+        {
+            enabled = false;
+        }
     }
 
     void Start()
     {
-
+        image = Resources.Load<Texture2D>("StandInfo/" + name);
     }
 
     // Update is called once per frame
@@ -25,7 +37,10 @@ public class Stand : MonoBehaviour
         //接触したオブジェクトのタグが"Player"のとき
         if (other.gameObject.name == "Player")
         {
-            Debug.Log("p");
+            if (Input.GetKey(KeyCode.Space))
+            {
+                ShowInfo();
+            }
         }
     }
 }
