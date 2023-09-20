@@ -1,29 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Stand : MonoBehaviour
 {
     [SerializeField]
-    private string name = null;
-    private bool enabled = false;
-    private Texture2D image = null;
+    private string standName = "stand";
+    private bool IsOpen = false;
+    private Sprite image = null;
     public void ShowInfo()
     {
-        if (!enabled)
+        if (!IsOpen)
         {
-            Debug.Log("Stand: " + name);
-            enabled = true;
+            Debug.Log("Open");
         }
-        else if (enabled)
+        else
         {
-            enabled = false;
+            Debug.Log("Close");
         }
     }
 
     void Start()
     {
-        image = Resources.Load<Texture2D>("StandInfo/" + name);
+        image = Resources.Load<Sprite>("StandInfo/" + standName);
     }
 
     // Update is called once per frame
@@ -32,15 +32,12 @@ public class Stand : MonoBehaviour
 
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //接触したオブジェクトのタグが"Player"のとき
         if (other.gameObject.name == "Player")
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                ShowInfo();
-            }
+            DialogAnimater.instance.image.sprite = this.image;
         }
     }
 }
