@@ -62,7 +62,7 @@ public class DialogAnimater : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isOpening || isClosing) return;
+            if (isOpening || isClosing || this.image.sprite == null) return;
             if (IsOpen)
             {
                 Close();

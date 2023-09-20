@@ -40,4 +40,13 @@ public class Stand : MonoBehaviour
             DialogAnimater.instance.image.sprite = this.image;
         }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        //接触したオブジェクトのタグが"Player"のとき
+        if (other.gameObject.name == "Player")
+        {
+            DialogAnimater.instance.image.sprite = null;
+        }
+    }
 }
