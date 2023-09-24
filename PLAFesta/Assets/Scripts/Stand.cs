@@ -9,16 +9,9 @@ public class Stand : MonoBehaviour
     private string standName = "stand";
     private bool IsOpen = false;
     private Sprite image = null;
-    public void ShowInfo()
+    public void setStandPicture()
     {
-        if (!IsOpen)
-        {
-            Debug.Log("Open");
-        }
-        else
-        {
-            Debug.Log("Close");
-        }
+        DialogAnimater.instance.image.sprite = this.image;
     }
 
     void Start()
